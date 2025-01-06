@@ -1,6 +1,49 @@
 import { Link } from "react-router-dom";
 
 export default function Home() {
+<<<<<<< HEAD
+=======
+  const [offerListings, setOfferListings] = useState([]);
+  const [saleListings, setSaleListings] = useState([]);
+  const [rentListings, setRentListings] = useState([]);
+  SwiperCore.use([Navigation]);
+
+  useEffect(() => {
+    const fetchOfferListings = async () => {
+      try {
+        const res = await fetch("/server/listing/get?offer=true&limit=4");
+        const data = await res.json();
+        setOfferListings(data);
+        fetchRentListings();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const fetchRentListings = async () => {
+      try {
+        const res = await fetch("/server/listing/get?type=rent&limit=4");
+        const data = await res.json();
+        setRentListings(data);
+        fetchSaleListings();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const fetchSaleListings = async () => {
+      try {
+        const res = await fetch("/server/listing/get?type=sale&limit=4");
+        const data = await res.json();
+        setSaleListings(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchOfferListings();
+  }, []);
+
+>>>>>>> 49fb9b3dbb4e786b599ee8f0b5b20347d9b48284
   return (
     <div
       className="min-h-screen bg-cover bg-center"
