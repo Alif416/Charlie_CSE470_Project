@@ -27,4 +27,8 @@ const propertySchema = new mongoose.Schema({
 
 const Property = mongoose.model('Property', propertySchema);
 
+<<<<<<< HEAD
 export default Property;
+=======
+export default Property;
+>>>>>>> 27f835a85f5476eef745d5085de0b81c357835ae
