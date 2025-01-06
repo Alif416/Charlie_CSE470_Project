@@ -25,6 +25,7 @@ const userSlice = createSlice({
       state.loading = false;
     },
 
+
     updateUserStart: (state) => {
       state.loading = true;
     },
