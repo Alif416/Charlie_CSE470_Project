@@ -3,6 +3,10 @@ import User from "../models/user.model.js";
 import { errorHandler } from "../utils/error.js";
 import bcryptjs from "bcryptjs";
 
+export const test = (req, res) => {
+  res.send("Test function");
+};
+
 export const testing = (req, res) => {
   res.json({
     message: "Every programmer is an Author! ",
